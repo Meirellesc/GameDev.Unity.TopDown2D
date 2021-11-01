@@ -1,20 +1,30 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dialogue/DialogueControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="58" Column="31" />
-      <File FileName="Assets/Scripts/PlayerAnim.cs" Line="79" Column="39" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueControl.cs" Line="86" Column="39" />
+      <File FileName="Assets/Scripts/NPC/Dialogue.cs" Line="25" Column="54" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueSettings.cs" Line="61" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="TopDownGame2D" expanded="True" selected="True" />
+          <Node name="TopDownGame2D" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Dialogue" expanded="True">
+                  <Node name="DialogueControl.cs" selected="True" />
+                </Node>
+                <Node name="NPC" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="22a2f90a-8db8-4c25-9428-175d00006504" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2878269b-5d31-4081-a652-8e79ec9f3274" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
