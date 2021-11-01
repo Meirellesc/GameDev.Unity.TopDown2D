@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dialogue/DialogueControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/Dialogue/DialogueControl.cs" Line="86" Column="39" />
-      <File FileName="Assets/Scripts/NPC/Dialogue.cs" Line="25" Column="54" />
-      <File FileName="Assets/Scripts/Dialogue/DialogueSettings.cs" Line="61" Column="17" />
+      <File FileName="Assets/Scripts/NPC/NPC_1/NPC.cs" Line="17" Column="29" />
+      <File FileName="Assets/Scripts/Dialogue/DialogueControl.cs" Line="57" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +13,9 @@
                 <Node name="Dialogue" expanded="True">
                   <Node name="DialogueControl.cs" selected="True" />
                 </Node>
-                <Node name="NPC" expanded="True" />
+                <Node name="NPC" expanded="True">
+                  <Node name="NPC_1" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -24,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2878269b-5d31-4081-a652-8e79ec9f3274" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2f146ea0-d6ba-46d5-8381-419bd761a9cd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

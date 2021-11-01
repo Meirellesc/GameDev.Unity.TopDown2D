@@ -54,10 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Dialogue/DialogueSettings.cs" />
+    <Compile Include="Assets/Scripts/NPC/NPC_Dialogue.cs" />
+    <Compile Include="Assets/Scripts/Dialogue/DialogueControl.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerAnim.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
-    <Compile Include="Assets/Scripts/Dialogue/DialogueControl.cs" />
-    <Compile Include="Assets/Scripts/NPC/NPC_Dialogue.cs" />
+    <Compile Include="Assets/Scripts/NPC/NPC_1/NPC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
