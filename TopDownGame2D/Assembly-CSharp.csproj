@@ -59,6 +59,10 @@
     <Compile Include="Assets/Scripts/Player/PlayerAnim.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scripts/NPC/NPC_1/NPC.cs" />
+    <Compile Include="Assets/Scripts/Environment/Tree/Tree.cs" />
+    <Compile Include="Assets/Scripts/Environment/Tree/TreeAnim.cs" />
+    <Compile Include="Assets/Scripts/Drops Items/Wood.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerItems.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

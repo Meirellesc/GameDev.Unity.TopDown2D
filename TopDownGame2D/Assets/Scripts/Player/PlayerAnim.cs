@@ -22,6 +22,7 @@ public class PlayerAnim : MonoBehaviour
     {
         OnMove();
         OnRun();
+        OnCutting();
     }
 
     #region Movement
@@ -81,6 +82,14 @@ public class PlayerAnim : MonoBehaviour
         }
         
         return false;
+    }
+
+    private void OnCutting()
+    {
+        if(player.IsCutting)
+        {
+            animator.SetInteger(transition, 3);
+        }
     }
 
     #endregion

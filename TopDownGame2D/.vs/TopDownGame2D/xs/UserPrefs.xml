@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Dialogue/DialogueControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Drops Items/Wood.cs">
     <Files>
-      <File FileName="Assets/Scripts/NPC/NPC_1/NPC.cs" Line="17" Column="29" />
-      <File FileName="Assets/Scripts/Dialogue/DialogueControl.cs" Line="57" Column="30" />
+      <File FileName="Assets/Scripts/Environment/Tree/Tree.cs" Line="48" Column="29" />
+      <File FileName="Assets/Scripts/Drops Items/Wood.cs" Line="23" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,12 +10,17 @@
           <Node name="TopDownGame2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Dialogue" expanded="True">
-                  <Node name="DialogueControl.cs" selected="True" />
+                <Node name="Dialogue" expanded="True" />
+                <Node name="Drops Items" expanded="True">
+                  <Node name="Wood.cs" selected="True" />
+                </Node>
+                <Node name="Environment" expanded="True">
+                  <Node name="Tree" expanded="True" />
                 </Node>
                 <Node name="NPC" expanded="True">
                   <Node name="NPC_1" expanded="True" />
                 </Node>
+                <Node name="Player" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -5,6 +5,7 @@ using System.Windows.Input;
 
 public class Player : MonoBehaviour
 {
+    #region Movement Conotrol
     // Player's Rigidbody 
     private Rigidbody2D rBody;
 
@@ -20,7 +21,9 @@ public class Player : MonoBehaviour
         get { return _direction; }
         set { _direction = value; }
     }
+    #endregion
 
+    #region Action Controls
     // Running Control
     private bool _isRunning;
     public bool IsRunning
@@ -37,6 +40,15 @@ public class Player : MonoBehaviour
         set { _isRolling = value; }
     }
 
+    // Cutting Control
+    private bool _isCutting;
+    public bool IsCutting
+    {
+        get { return _isCutting; }
+        set { _isCutting = value; }
+    }
+    #endregion
+
     // Initialize the player's variables
     private void Start()
     {
@@ -51,7 +63,9 @@ public class Player : MonoBehaviour
 
         OnRun();
 
-        OnRoll();
+        OnRolling();
+
+        OnCutting();
     }
 
     // Update the physics of the game
@@ -86,9 +100,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnRoll()
+    private void OnRolling()
     {
-        // Right Mouse = 1
+        // Right Mouse Button = 1
         if(Input.GetMouseButtonDown(1))
         {
             _isRolling = true;
@@ -99,5 +113,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Action
+    private void OnCutting()
+    {
+        // Left Mouse Button = 0
+        if (Input.GetMouseButtonDown(0))
+        {
+            _isCutting = true;
+            speed = 0f;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _isCutting = false;
+            speed = initialSpeed;
+        }
+    }
     #endregion
 }
