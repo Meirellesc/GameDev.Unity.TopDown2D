@@ -19,12 +19,12 @@ MonoBehaviour:
   - actorName: Player
     actorSprite: {fileID: 21300000, guid: 9ae99921f6a59411a9138ad1904def21, type: 3}
     language:
-      portuguese: "Ol\xE1 amigo!"
-      english: Hello friend!
+      portuguese: "Ol\xE1, amigo!"
+      english: Hello, friend!
       spanish: 
   - actorName: NPC_1
     actorSprite: {fileID: 21300000, guid: 0e45011688915464290fabe228ac1359, type: 3}
     language:
-      portuguese: "Amigo??? Nem te conhe\xE7o forasteiro! Saia daqui! "
-      english: Friend??? I don't even know you outsider! Get out of here!
+      portuguese: "Amigo??? Nem te conhe\xE7o, forasteiro! Saia daqui! "
+      english: Friend??? I don't even know you, outsider! Get out of here!
       spanish: 

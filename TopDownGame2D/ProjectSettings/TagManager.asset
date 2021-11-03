@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Axe
   - Wood
+  - Shovel
+  - WateringCan
   layers:
   - Default
   - TransparentFX
