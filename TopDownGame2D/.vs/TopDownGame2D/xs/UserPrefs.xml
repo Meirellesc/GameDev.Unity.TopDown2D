@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Farm/Dig.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerItems.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/Player.cs" Line="202" Column="28" />
-      <File FileName="Assets/Scripts/Player/PlayerAnim.cs" Line="107" Column="30" />
-      <File FileName="Assets/Scripts/Player/PlayerItems.cs" Line="28" Column="6" />
-      <File FileName="Assets/Scripts/Farm/Water.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/Farm/Dig.cs" Line="77" Column="6" />
+      <File FileName="Assets/Scripts/HUD/HudController.cs" Line="32" Column="55" />
+      <File FileName="Assets/Scripts/Player/PlayerItems.cs" Line="41" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +10,13 @@
           <Node name="TopDownGame2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Environment" expanded="True" />
-                <Node name="Farm" expanded="True">
-                  <Node name="Dig.cs" selected="True" />
+                <Node name="HUD" expanded="True" />
+                <Node name="NPC" expanded="True">
+                  <Node name="NPC_1" expanded="True" />
                 </Node>
-                <Node name="Player" expanded="True" />
+                <Node name="Player" expanded="True">
+                  <Node name="PlayerItems.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -27,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1dbc9e08-bd98-47ff-9826-3b503c20f4c9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91f36a41-15c7-4cd9-b859-b3ff5ee1a073" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

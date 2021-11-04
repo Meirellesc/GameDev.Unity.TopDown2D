@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerItems : MonoBehaviour
 {
-    [SerializeField] private int LIMIT_ITEM = 50;
+    [SerializeField] public float woodMaxLimit { get; private set; } = 25;
+    [SerializeField] public float waterMaxLimit { get; private set; } = 50;
+    [SerializeField] public float carrotMaxLimit { get; private set; } = 10;
 
     // Wood
     [SerializeField] private int _totalWood;
     public int TotalWood
     {
         get => _totalWood;
-        set => _totalWood = CheckLimitItem(value);
+        set => _totalWood = CheckLimitItem(value, woodMaxLimit);
     }
 
     // Water
@@ -19,7 +21,7 @@ public class PlayerItems : MonoBehaviour
     public float TotalWater
     {
         get => _totalWater;
-        set => _totalWater = CheckLimitItem(value);
+        set => _totalWater = CheckItemLimit(value, waterMaxLimit);
     }
 
     // Carrot
@@ -27,14 +29,14 @@ public class PlayerItems : MonoBehaviour
     public int TotalCarrot
     {
         get => _totalCarrot;
-        set => _totalCarrot = CheckLimitItem(value);
+        set => _totalCarrot = CheckLimitItem(value, carrotMaxLimit);
     }
 
-    private int CheckLimitItem(int value)
-    { 
-        if (value > LIMIT_ITEM)
+    private int CheckLimitItem(int value, float maxLimit)
+    {
+        if (value > maxLimit)
         {
-            return LIMIT_ITEM;
+            return (int)maxLimit;
         }
 
         if(value < 0)
@@ -45,11 +47,11 @@ public class PlayerItems : MonoBehaviour
         return value;
     }
 
-    private float CheckLimitItem(float value)
+    private float CheckItemLimit(float value, float maxLimit)
     {
-        if (value > LIMIT_ITEM)
+        if (value > maxLimit)
         {
-            return LIMIT_ITEM;
+            return maxLimit;
         }
 
         if (value < 0)

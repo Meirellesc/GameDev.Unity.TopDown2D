@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 public class Player : MonoBehaviour
 {
-    #region Movement Conotrol
+    #region Movement Controls
     // Player's Rigidbody 
     private Rigidbody2D rBody;
 
@@ -73,11 +73,15 @@ public class Player : MonoBehaviour
     // Action Hadler Object
     private int handlingObj;
 
-    // Initialize the player's variables
-    private void Start()
+    private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
         playerItems = GetComponent<PlayerItems>();
+    }
+
+    // Initialize the player's variables
+    private void Start()
+    {
         initialSpeed = speed;
     }
 

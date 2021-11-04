@@ -25,11 +25,15 @@ public class Dig : MonoBehaviour
 
     private PlayerItems playerItems;
 
+    private void Awake()
+    {
+        playerItems = FindObjectOfType<PlayerItems>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         initialDigAmount = digAmout;
-        playerItems = FindObjectOfType<PlayerItems>();
     }
 
     // Update is called once per frame
