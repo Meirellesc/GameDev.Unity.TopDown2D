@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerItems.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Farm/FishCollider.cs">
     <Files>
-      <File FileName="Assets/Scripts/HUD/HudController.cs" Line="32" Column="55" />
-      <File FileName="Assets/Scripts/Player/PlayerItems.cs" Line="41" Column="1" />
+      <File FileName="Assets/Scripts/Drop_Items/FishItem.cs" Line="40" Column="38" />
+      <File FileName="Assets/Scripts/Farm/FishCollider.cs" Line="52" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,13 +10,11 @@
           <Node name="TopDownGame2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="HUD" expanded="True" />
-                <Node name="NPC" expanded="True">
-                  <Node name="NPC_1" expanded="True" />
+                <Node name="Farm" expanded="True">
+                  <Node name="FishCollider.cs" selected="True" />
                 </Node>
-                <Node name="Player" expanded="True">
-                  <Node name="PlayerItems.cs" selected="True" />
-                </Node>
+                <Node name="Player" expanded="True" />
+                <Node name="Prefabs" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -26,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91f36a41-15c7-4cd9-b859-b3ff5ee1a073" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7d793994-90c8-4dfa-a541-ead39d7c20d6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

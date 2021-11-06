@@ -7,6 +7,7 @@ public class PlayerItems : MonoBehaviour
     [SerializeField] public float woodMaxLimit { get; private set; } = 25;
     [SerializeField] public float waterMaxLimit { get; private set; } = 50;
     [SerializeField] public float carrotMaxLimit { get; private set; } = 10;
+    [SerializeField] public float fishMaxLimit { get; private set; } = 10;
 
     // Wood
     [SerializeField] private int _totalWood;
@@ -30,6 +31,14 @@ public class PlayerItems : MonoBehaviour
     {
         get => _totalCarrot;
         set => _totalCarrot = CheckLimitItem(value, carrotMaxLimit);
+    }
+
+    // Fish
+    [SerializeField] private int _totalFish;
+    public int TotalFish
+    {
+        get => _totalFish;
+        set => _totalFish = CheckLimitItem(value, fishMaxLimit);
     }
 
     private int CheckLimitItem(int value, float maxLimit)

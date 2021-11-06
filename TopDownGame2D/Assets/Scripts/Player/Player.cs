@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Windows.Input;
 
+public enum Orientation
+{
+    LEFT,
+    RIGHT
+}
+
 public class Player : MonoBehaviour
 {
     #region Movement Controls
@@ -21,10 +27,22 @@ public class Player : MonoBehaviour
         get { return _direction; }
         set { _direction = value; }
     }
+
+    private Orientation _orientation;
+    public Orientation Orientation
+    {
+        get { return _orientation; }
+        set { _orientation = value; }
+    }
     #endregion
 
     #region Action Controls
-    private bool doingAction;
+    private bool _doingAction;
+    public bool DoingAction
+    {
+        get { return _doingAction; }
+        set { _doingAction = value; }
+    }
 
     // Running Control
     private bool _isRunning;
@@ -65,13 +83,27 @@ public class Player : MonoBehaviour
         get { return _isWatering; }
         set { _isWatering = value; }
     }
+
+    // Fishing Control
+    private bool _isFishing;
+    public bool IsFishing
+    {
+        get { return _isFishing; }
+        set { _isFishing = value; }
+    }
     #endregion
 
     // Player Items
     private PlayerItems playerItems;
 
     // Action Hadler Object
-    private int handlingObj;
+    public bool hasHandledObj;
+    private int _handlingObj;
+    public int HandlingObj
+    {
+        get { return _handlingObj; }
+        set { _handlingObj = value; }
+    }
 
     private void Awake()
     {
@@ -97,6 +129,7 @@ public class Player : MonoBehaviour
         OnCutting();
         OnDigging();
         OnWatering();
+        OnFishing();
     }
 
     // Update the physics of the game
@@ -111,17 +144,23 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                handlingObj = 1;
+                _handlingObj = 1;
+                hasHandledObj = true;
             }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                handlingObj = 2;
+                _handlingObj = 2;
+                hasHandledObj = true;
             }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                handlingObj = 3;
+                _handlingObj = 3;
+                hasHandledObj = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                _handlingObj = 4;
+                hasHandledObj = true;
             }
         }
     }
@@ -129,7 +168,7 @@ public class Player : MonoBehaviour
     #region Movements
     private void OnInput()
     {
-        if (!doingAction)
+        if (!_doingAction)
         {
             _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
@@ -137,7 +176,7 @@ public class Player : MonoBehaviour
 
     private void OnMove()
     {
-        if (!doingAction)
+        if (!_doingAction)
         {
             rBody.MovePosition(rBody.position + _direction * speed * Time.fixedDeltaTime);
         }
@@ -145,7 +184,7 @@ public class Player : MonoBehaviour
 
     private void OnRun()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !doingAction)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && !_doingAction)
         {
             speed = runSpeed;
             _isRunning = true;
@@ -161,7 +200,7 @@ public class Player : MonoBehaviour
     private void OnRolling()
     {
         // Right Mouse Button = 1
-        if(Input.GetMouseButtonDown(1) && !doingAction)
+        if(Input.GetMouseButtonDown(1) && !_doingAction)
         {
             _isRolling = true;
         }
@@ -176,20 +215,20 @@ public class Player : MonoBehaviour
     #region Actions
     private void OnCutting()
     {
-        if (handlingObj == 1)
+        if (_handlingObj == 1)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
             {
                 _isCutting = true;
-                doingAction = true;
+                _doingAction = true;
                 speed = 0f;
             }
 
             if (Input.GetMouseButtonUp(0))
             {
                 _isCutting = false;
-                doingAction = false;
+                _doingAction = false;
                 speed = initialSpeed;
             }
         }
@@ -197,20 +236,20 @@ public class Player : MonoBehaviour
 
     private void OnDigging()
     {
-        if (handlingObj == 2)
+        if (_handlingObj == 2)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
             {
                 _isDigging = true;
-                doingAction = true;
+                _doingAction = true;
                 speed = 0f;
             }
 
             if (Input.GetMouseButtonUp(0))
             {
                 _isDigging = false;
-                doingAction = false;
+                _doingAction = false;
                 speed = initialSpeed;
             }
         }
@@ -218,13 +257,13 @@ public class Player : MonoBehaviour
 
     private void OnWatering()
     {
-        if (handlingObj == 3)
+        if (_handlingObj == 3)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0) && playerItems.TotalWater > 0f)
             {
                 _isWatering = true;
-                doingAction = true;
+                _doingAction = true;
                 speed = 0f;
             }
 
@@ -237,11 +276,32 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonUp(0) || playerItems.TotalWater <= 0f)
             {
                 _isWatering = false;
-                doingAction = false;
+                _doingAction = false;
                 speed = initialSpeed;
             }
         }
 
+    }
+
+    private void OnFishing()
+    {
+        if (_handlingObj == 4)
+        {
+            // Left Mouse Button = 0
+            if (Input.GetMouseButtonDown(0))
+            {
+                _isFishing = true;
+                _doingAction = true;
+                speed = 0f;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isFishing = false;
+                _doingAction = false;
+                speed = initialSpeed;
+            }
+        }
     }
     #endregion
 }

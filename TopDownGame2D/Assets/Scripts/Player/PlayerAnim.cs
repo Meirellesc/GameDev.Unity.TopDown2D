@@ -6,6 +6,7 @@ public class PlayerAnim : MonoBehaviour
 {
     private Player player;
     private Animator animator;
+    private FishCollider fishCollider;
 
     private readonly string transition = "transition";
     private readonly string isRoll = "isRoll";
@@ -15,13 +16,18 @@ public class PlayerAnim : MonoBehaviour
     {
         player = GetComponent<Player>();
         animator = GetComponent<Animator>();
+        fishCollider = FindObjectOfType<FishCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        OnMove();
-        OnRun();
+        if (!player.DoingAction)
+        {
+            OnMove();
+            OnRun();
+        }
+
         OnCutting();
         OnDigging();
         OnWatering();
@@ -50,12 +56,14 @@ public class PlayerAnim : MonoBehaviour
         if (player.Direction.x > 0)
         {
             transform.eulerAngles = new Vector2(0, 0);
+            player.Orientation = Orientation.RIGHT;
         }
 
         // Identify if player is moving to left
         if (player.Direction.x < 0)
         {
             transform.eulerAngles = new Vector2(0, 180);
+            player.Orientation = Orientation.LEFT;
         }
     }
 
@@ -108,6 +116,26 @@ public class PlayerAnim : MonoBehaviour
         {
             animator.SetInteger(transition, 5);
         }
+    }
+
+    /// <summary>
+    /// This Funciton its called by Fish Class
+    /// </summary>
+    public void OnFishingStarted()
+    {
+        if (player.IsFishing)
+        {
+            animator.SetInteger(transition, 6);
+        }
+    }
+
+    /// <summary>
+    /// This Function is triggered when finish the fishing animation
+    /// then, call the Fishing function into Fish Class
+    /// </summary>
+    public void OnFishingEnded()
+    {
+        fishCollider.OnFishing();
     }
 
     #endregion
