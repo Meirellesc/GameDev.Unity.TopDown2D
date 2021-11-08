@@ -91,6 +91,14 @@ public class Player : MonoBehaviour
         get { return _isFishing; }
         set { _isFishing = value; }
     }
+
+    // Crafting Control
+    private bool _isCrafting;
+    public bool IsCrafting
+    {
+        get { return _isCrafting; }
+        set { _isCrafting = value; }
+    }
     #endregion
 
     // Player Items
@@ -130,6 +138,7 @@ public class Player : MonoBehaviour
         OnDigging();
         OnWatering();
         OnFishing();
+        OnCrafting();
     }
 
     // Update the physics of the game
@@ -160,6 +169,11 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 _handlingObj = 4;
+                hasHandledObj = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                _handlingObj = 5;
                 hasHandledObj = true;
             }
         }
@@ -298,6 +312,27 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 _isFishing = false;
+                _doingAction = false;
+                speed = initialSpeed;
+            }
+        }
+    }
+
+    private void OnCrafting()
+    {
+        if (_handlingObj == 5)
+        {
+            // Left Mouse Button = 0
+            if (Input.GetMouseButtonDown(0))
+            {
+                _isCrafting = true;
+                _doingAction = true;
+                speed = 0f;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isCrafting = false;
                 _doingAction = false;
                 speed = initialSpeed;
             }

@@ -31,6 +31,7 @@ public class PlayerAnim : MonoBehaviour
         OnCutting();
         OnDigging();
         OnWatering();
+        OnCrafting();
     }
 
     #region Movement
@@ -94,6 +95,9 @@ public class PlayerAnim : MonoBehaviour
         return false;
     }
 
+    #endregion
+
+    #region Action
     private void OnCutting()
     {
         if(player.IsCutting)
@@ -138,5 +142,13 @@ public class PlayerAnim : MonoBehaviour
         fishCollider.OnFishing();
     }
 
+
+    private void OnCrafting()
+    {
+        if (player.IsCrafting)
+        {
+            animator.SetInteger(transition, 7);
+        }
+    }
     #endregion
 }

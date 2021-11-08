@@ -17,6 +17,9 @@ public class HoleCollider : MonoBehaviour
     [SerializeField] private float waterAmount;
     [SerializeField] private bool wateringDetect;
 
+    [Header("Variables Control")]
+    [SerializeField] private bool playerDetect;
+
     private int initialDigAmount;
     private float currentWaterAmount;
 
@@ -79,7 +82,7 @@ public class HoleCollider : MonoBehaviour
 
     private void OnCollectCarrot()
     {
-        if(hasCarrot)
+        if(hasCarrot && playerDetect)
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
@@ -106,6 +109,11 @@ public class HoleCollider : MonoBehaviour
         {
             wateringDetect = true;
         }
+
+        if (collision.CompareTag("Player"))
+        {
+            playerDetect = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -113,6 +121,11 @@ public class HoleCollider : MonoBehaviour
         if (collision.CompareTag("WateringCan"))
         {
             wateringDetect = false;
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            playerDetect = false;
         }
     }
 }

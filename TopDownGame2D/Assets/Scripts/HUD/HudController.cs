@@ -21,6 +21,8 @@ public class HudController : MonoBehaviour
     [SerializeField] Image wateringCanIndicator;
     [SerializeField] Image rodUI;
     [SerializeField] Image rodIndicator;
+    [SerializeField] Image hammerUI;
+    [SerializeField] Image hammerIndicator;
 
     private Dictionary<int, Image> toolsUI = new Dictionary<int, Image>();
     private Dictionary<int, Image> toolsIndicator = new Dictionary<int, Image>();
@@ -40,11 +42,13 @@ public class HudController : MonoBehaviour
         toolsUI.Add(2, shovelUI);
         toolsUI.Add(3, wateringCanUI);
         toolsUI.Add(4, rodUI);
+        toolsUI.Add(5, hammerUI);
 
         toolsIndicator.Add(1, axeIndicator);
         toolsIndicator.Add(2, shovelIndicator);
         toolsIndicator.Add(3, wateringCanIndicator);
         toolsIndicator.Add(4, rodIndicator);
+        toolsIndicator.Add(5, hammerIndicator);
     }
 
     // Start is called before the first frame update
