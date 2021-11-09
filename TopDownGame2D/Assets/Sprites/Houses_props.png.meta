@@ -65,6 +65,12 @@ TextureImporter:
   - first:
       213: 7585892208005621950
     second: Houses_props_20
+  - first:
+      213: -4618315759372119505
+    second: Houses_props_21
+  - first:
+      213: 4081138761629574030
+    second: Houses_props_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -472,10 +478,10 @@ TextureImporter:
       name: Houses_props_15
       rect:
         serializedVersion: 2
-        x: 55
-        y: 72
-        width: 60
-        height: 77
+        x: 56
+        y: 101
+        width: 42
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,7 +588,7 @@ TextureImporter:
         width: 30
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -590,6 +596,48 @@ TextureImporter:
       bones: []
       spriteID: eb8249a75c0864960800000000000000
       internalID: 7585892208005621950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_21
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 72
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f225906294278efb0800000000000000
+      internalID: -4618315759372119505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_props_22
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 72
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e832206b41e13a830800000000000000
+      internalID: 4081138761629574030
       vertices: []
       indices: 
       edges: []
