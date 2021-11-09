@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Building/HouseCollider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/Building/HouseCollider.cs" Line="46" Column="37" />
-      <File FileName="Assets/Scripts/Farm/WaterCollider.cs" Line="28" Column="27" />
-      <File FileName="Assets/Scripts/Farm/FishCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Environment/Tree/Tree.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HUD/HudController.cs" Line="29" Column="41" />
+      <File FileName="Assets/Scripts/Enemy/Enemy.cs" Line="28" Column="23" />
+      <File FileName="Assets/Scripts/Enemy/EnemyAnim.cs" Line="28" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +10,16 @@
           <Node name="TopDownGame2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Building" expanded="True">
-                  <Node name="HouseCollider.cs" selected="True" />
+                <Node name="Building" expanded="True" />
+                <Node name="Enemy" expanded="True">
+                  <Node name="Enemy.cs" selected="True" />
                 </Node>
                 <Node name="Environment" expanded="True">
                   <Node name="Tree" expanded="True" />
                 </Node>
                 <Node name="Farm" expanded="True" />
                 <Node name="HUD" expanded="True" />
+                <Node name="Player" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -30,7 +29,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fb7c989d-a08f-427e-8275-1d21a79be2e9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c472dfb8-fc21-4f31-b2b8-299df1f242c1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
