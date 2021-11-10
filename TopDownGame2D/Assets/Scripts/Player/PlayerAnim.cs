@@ -8,8 +8,13 @@ public class PlayerAnim : MonoBehaviour
     private Animator animator;
     private FishCollider fishCollider;
 
+    private bool wasHurt;
+    private float timeCount;
+    private float recoveryTime = 1f;
+
     private readonly string transition = "transition";
     private readonly string isRoll = "isRoll";
+    private readonly string isHurting = "isHurting";
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,8 @@ public class PlayerAnim : MonoBehaviour
         OnDigging();
         OnWatering();
         OnCrafting();
+
+        OnRecovery();
     }
 
     #region Movement
@@ -148,6 +155,34 @@ public class PlayerAnim : MonoBehaviour
         if (player.IsCrafting)
         {
             animator.SetInteger(transition, 7);
+        }
+    }
+    #endregion
+
+    #region Attack
+    public void OnHurting()
+    {
+        if (!wasHurt)
+        {
+            animator.SetTrigger(isHurting);
+            player.Health -= 1;
+
+            wasHurt = true;
+        }
+    }
+
+    private void OnRecovery()
+    {
+        if (wasHurt)
+        {
+            // Add timeCount in seconds
+            timeCount += Time.deltaTime;
+
+            if (timeCount >= recoveryTime)
+            {
+                wasHurt = false;
+                timeCount = 0f;
+            }
         }
     }
     #endregion

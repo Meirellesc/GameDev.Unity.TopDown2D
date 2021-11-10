@@ -101,10 +101,18 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    // Life
+    [SerializeField] private int _health;
+    public int Health
+    {
+        get { return _health; }
+        set { _health = value; }
+    }
+
     // Player Items
     private PlayerItems playerItems;
 
-    // Action Hadler Object
+    // Tools Hadler Object
     public bool hasHandledObj;
     private int _handlingObj;
     public int HandlingObj
