@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,17 +47,15 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneOSX:2</UnityBuildTarget>
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets/Scripts/Prefabs/FishPrefab.cs" />
     <Compile Include="Assets/Scripts/Farm/WaterCollider.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyAnim.cs" />
     <Compile Include="Assets/Scripts/Environment/Tree/Tree.cs" />
     <Compile Include="Assets/Scripts/Dialogue/DialogueSettings.cs" />
     <Compile Include="Assets/Scripts/Building/HouseCollider.cs" />
@@ -65,6 +63,7 @@
     <Compile Include="Assets/Scripts/Farm/FishCollider.cs" />
     <Compile Include="Assets/Scripts/NPC/NPC_1/NPC.cs" />
     <Compile Include="Assets/Scripts/Dialogue/DialogueControl.cs" />
+    <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerAnim.cs" />
     <Compile Include="Assets/Scripts/Farm/HoleCollider.cs" />
     <Compile Include="Assets/Scripts/HUD/HudController.cs" />
@@ -72,8 +71,9 @@
     <Compile Include="Assets/Scripts/Environment/Tree/TreeAnim.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerItems.cs" />
     <Compile Include="Assets/Scripts/Player/Player.cs" />
-    <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
-    <Compile Include="Assets/Scripts/Enemy/EnemyAnim.cs" />
+    <Compile Include="Assets/Scripts/Sounds/AudioManager.cs" />
+    <Compile Include="Assets/Scripts/Sounds/AudioControl.cs" />
+    <Compile Include="Assets/Scripts/Sounds/ActorSFX.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -764,9 +764,17 @@
       <Project>{EC51C8A8-8AF6-281F-B05E-AA6EFC1B15DC}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{D7079DFB-6970-546D-85BD-8735C4677D8A}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
       <Project>{8C8219F5-3E57-9941-A62C-5555D501D1D3}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{00C89DD1-854B-174F-A7D9-42CAC0A1ACE1}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Editor.csproj">
       <Project>{A73867BD-2F1D-BE1C-E30C-8CDBDC5A9A72}</Project>
@@ -775,14 +783,6 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{1DEAF0A2-290C-7A95-E927-8BB6CEC5DBAD}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{00C89DD1-854B-174F-A7D9-42CAC0A1ACE1}</Project>
-      <Name>NavMeshComponents</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{D7079DFB-6970-546D-85BD-8735C4677D8A}</Project>
-      <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

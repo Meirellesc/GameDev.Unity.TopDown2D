@@ -47,12 +47,10 @@ public class FishCollider : MonoBehaviour
             // Check if player is oriented to left
             if (player.Orientation == Orientation.LEFT && iFishX > 0)
             {
-                Debug.Log("Change To left");
                 iFishX *= -1;
             }
             else if(player.Orientation == Orientation.RIGHT && iFishX < 0)
             {
-                Debug.Log("Change To right");
                 iFishX *= -1;
             }
             

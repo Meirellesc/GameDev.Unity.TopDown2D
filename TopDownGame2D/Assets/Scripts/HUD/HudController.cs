@@ -13,6 +13,8 @@ public class HudController : MonoBehaviour
     [SerializeField] Image fishBar;
 
     [Header("Tools")]
+    [SerializeField] Image swordUI;
+    [SerializeField] Image swordIndicator;
     [SerializeField] Image axeUI;
     [SerializeField] Image axeIndicator;
     [SerializeField] Image shovelUI;
@@ -38,17 +40,19 @@ public class HudController : MonoBehaviour
         playerItems = FindObjectOfType<PlayerItems>();
         player = playerItems.GetComponent<Player>();
 
-        toolsUI.Add(1, axeUI);
-        toolsUI.Add(2, shovelUI);
-        toolsUI.Add(3, wateringCanUI);
-        toolsUI.Add(4, rodUI);
-        toolsUI.Add(5, hammerUI);
+        toolsUI.Add(1, swordUI);
+        toolsUI.Add(2, axeUI);
+        toolsUI.Add(3, shovelUI);
+        toolsUI.Add(4, wateringCanUI);
+        toolsUI.Add(5, rodUI);
+        toolsUI.Add(6, hammerUI);
 
-        toolsIndicator.Add(1, axeIndicator);
-        toolsIndicator.Add(2, shovelIndicator);
-        toolsIndicator.Add(3, wateringCanIndicator);
-        toolsIndicator.Add(4, rodIndicator);
-        toolsIndicator.Add(5, hammerIndicator);
+        toolsIndicator.Add(1, swordIndicator);
+        toolsIndicator.Add(2, axeIndicator);
+        toolsIndicator.Add(3, shovelIndicator);
+        toolsIndicator.Add(4, wateringCanIndicator);
+        toolsIndicator.Add(5, rodIndicator);
+        toolsIndicator.Add(6, hammerIndicator);
     }
 
     // Start is called before the first frame update

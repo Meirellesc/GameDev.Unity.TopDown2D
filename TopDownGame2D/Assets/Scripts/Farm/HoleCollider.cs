@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HoleCollider : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip holeSFX;
+    [SerializeField] private AudioClip carrotSFX;
+
     [Header("Components")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite holeSprite;
@@ -72,8 +77,9 @@ public class HoleCollider : MonoBehaviour
             }
 
             // Check if filled the water to plant a carrot
-            if (currentWaterAmount >= waterAmount)
+            if (currentWaterAmount >= waterAmount && !hasCarrot)
             {
+                audioSource.PlayOneShot(holeSFX);
                 spriteRenderer.sprite = carrotSprite;
                 hasCarrot = true;
             }
@@ -86,6 +92,7 @@ public class HoleCollider : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.F))
             {
+                audioSource.PlayOneShot(carrotSFX);
                 playerItems.TotalCarrot++;
                 spriteRenderer.sprite = holeSprite;
                 currentWaterAmount = 0;

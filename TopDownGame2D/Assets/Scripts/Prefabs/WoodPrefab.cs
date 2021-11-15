@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class WoodPrefab : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip collectWoodClip;
+
+    [Header("Stats")]
     [SerializeField] private float speed;
     [SerializeField] private float timeMove;
     [SerializeField] private AnimationCurve curve;
@@ -54,6 +59,8 @@ public class WoodPrefab : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerItems>().TotalWood++;
+
+            audioSource.PlayOneShot(collectWoodClip);
 
             Destroy(gameObject);
         }

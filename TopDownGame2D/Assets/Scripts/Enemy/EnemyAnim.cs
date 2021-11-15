@@ -11,11 +11,15 @@ public class EnemyAnim : MonoBehaviour
     private PlayerAnim playerAnim;
 
     private Animator animator;
+    private Enemy enemy;
 
     private string transition = "transition";
+    private string isHurting = "isHurting";
+    private string isDead = "isDead";
 
     private void Awake()
     {
+        enemy = GetComponentInParent<Enemy>();
         playerAnim = FindObjectOfType<PlayerAnim>();
     }
 
@@ -41,11 +45,35 @@ public class EnemyAnim : MonoBehaviour
 
     public void AtackAction()
     {
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerLayer);
-
-        if(hit != null)
+        if (!enemy.isDead)
         {
-            playerAnim.OnHurting();
+            Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerLayer);
+
+            if (hit != null)
+            {
+                playerAnim.OnHurting();
+            }
+        }
+    }
+
+    public void OnHurting()
+    {
+        if (!enemy.isDead)
+        {
+            if (enemy.CurrentHealth <= 0)
+            {
+                animator.SetTrigger(isDead);
+                enemy.isDead = true;
+
+                Destroy(enemy.gameObject, 3f);
+            }
+            else
+            {
+                animator.SetTrigger(isHurting);
+                enemy.CurrentHealth--;
+
+                enemy.healthBar.fillAmount = enemy.CurrentHealth / enemy.TotalHealth;
+            }
         }
     }
 

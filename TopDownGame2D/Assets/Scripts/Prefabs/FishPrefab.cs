@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class FishPrefab : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip collectFishClip;
+
+    [Header("Stats")]
     [SerializeField] private float speed;
     [SerializeField] private float timeMove;
     [SerializeField] private AnimationCurve curve;
@@ -37,7 +42,6 @@ public class FishPrefab : MonoBehaviour
         // Check if player is oriented to left, then throw the fish to right
         if(player.Orientation == Orientation.LEFT)
         {
-            Debug.Log("Prefab Left");
             end = transform.position + new Vector3(-xRange[xRandom], yRange[yRandom], 0);
 
             // Flip sprite
@@ -67,7 +71,10 @@ public class FishPrefab : MonoBehaviour
         {
             collision.GetComponent<PlayerItems>().TotalFish++;
 
+            audioSource.PlayOneShot(collectFishClip);
+
             Destroy(gameObject);
+            
         }
     }
 }

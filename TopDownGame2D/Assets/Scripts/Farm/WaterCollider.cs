@@ -26,7 +26,7 @@ public class WaterCollider : MonoBehaviour
     void Update()
     {
         if(detectPlayer &&
-           player.HandlingObj == 3 &&
+           player.HandlingObj == 4 &&
            Input.GetKeyDown(KeyCode.F))
         {
             playerItems.TotalWater += waterValue;

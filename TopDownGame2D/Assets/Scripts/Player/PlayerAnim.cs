@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
+    [Header("Attack Settings")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius;
+    [SerializeField] private LayerMask enemyLayer;
+
     private Player player;
     private Animator animator;
     private FishCollider fishCollider;
@@ -16,12 +21,17 @@ public class PlayerAnim : MonoBehaviour
     private readonly string isRoll = "isRoll";
     private readonly string isHurting = "isHurting";
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         player = GetComponent<Player>();
         animator = GetComponent<Animator>();
         fishCollider = FindObjectOfType<FishCollider>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -38,7 +48,8 @@ public class PlayerAnim : MonoBehaviour
         OnWatering();
         OnCrafting();
 
-        OnRecovery();
+        OnAttacking();
+        OnRecovering();
     }
 
     #region Movement
@@ -159,19 +170,34 @@ public class PlayerAnim : MonoBehaviour
     }
     #endregion
 
-    #region Attack
+    #region Combat
+    public void OnAttacking()
+    {
+        if (player.IsAttacking)
+        {
+            animator.SetInteger(transition, 8);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+    }
+
     public void OnHurting()
     {
         if (!wasHurt)
         {
             animator.SetTrigger(isHurting);
-            player.Health -= 1;
+            player.CurrentHealth -= Random.Range(1, 3);
+
+            player.healthBar.fillAmount = player.CurrentHealth / player.TotalHealth;
 
             wasHurt = true;
         }
     }
 
-    private void OnRecovery()
+    private void OnRecovering()
     {
         if (wasHurt)
         {

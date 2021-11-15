@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Windows.Input;
+using UnityEngine.UI;
 
 public enum Orientation
 {
@@ -101,13 +102,27 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    // Life
-    [SerializeField] private int _health;
-    public int Health
+    #region Combat Controls
+    private bool _isAttacking;
+    public bool IsAttacking
     {
-        get { return _health; }
-        set { _health = value; }
+        get { return _isAttacking; }
+        set { _isAttacking = value; }
     }
+    #endregion
+
+    [Header("Stats")]
+    // Life
+    [SerializeField] private float _currentHealth;
+    public float CurrentHealth
+    {
+        get { return _currentHealth; }
+        set { _currentHealth = value; }
+    }
+
+    public float TotalHealth;
+    public Image healthBar;
+    public bool isDead;
 
     // Player Items
     private PlayerItems playerItems;
@@ -125,6 +140,8 @@ public class Player : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         playerItems = GetComponent<PlayerItems>();
+
+        _currentHealth = TotalHealth;
     }
 
     // Initialize the player's variables
@@ -147,6 +164,7 @@ public class Player : MonoBehaviour
         OnWatering();
         OnFishing();
         OnCrafting();
+        OnAttacking();
     }
 
     // Update the physics of the game
@@ -182,6 +200,11 @@ public class Player : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha5))
             {
                 _handlingObj = 5;
+                hasHandledObj = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                _handlingObj = 6;
                 hasHandledObj = true;
             }
         }
@@ -237,7 +260,7 @@ public class Player : MonoBehaviour
     #region Actions
     private void OnCutting()
     {
-        if (_handlingObj == 1)
+        if (_handlingObj == 2)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
@@ -258,7 +281,7 @@ public class Player : MonoBehaviour
 
     private void OnDigging()
     {
-        if (_handlingObj == 2)
+        if (_handlingObj == 3)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
@@ -279,7 +302,7 @@ public class Player : MonoBehaviour
 
     private void OnWatering()
     {
-        if (_handlingObj == 3)
+        if (_handlingObj == 4)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0) && playerItems.TotalWater > 0f)
@@ -307,7 +330,7 @@ public class Player : MonoBehaviour
 
     private void OnFishing()
     {
-        if (_handlingObj == 4)
+        if (_handlingObj == 5)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
@@ -328,7 +351,7 @@ public class Player : MonoBehaviour
 
     private void OnCrafting()
     {
-        if (_handlingObj == 5)
+        if (_handlingObj == 6)
         {
             // Left Mouse Button = 0
             if (Input.GetMouseButtonDown(0))
@@ -346,5 +369,30 @@ public class Player : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region Combat
+
+    private void OnAttacking()
+    {
+        if (_handlingObj == 1)
+        {
+            // Left Mouse Button = 0
+            if (Input.GetMouseButtonDown(0))
+            {
+                _isAttacking = true;
+                _doingAction = true;
+                speed = 0f;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                _isAttacking = false;
+                _doingAction = false;
+                speed = initialSpeed;
+            }
+        }
+    }
+
     #endregion
 }
