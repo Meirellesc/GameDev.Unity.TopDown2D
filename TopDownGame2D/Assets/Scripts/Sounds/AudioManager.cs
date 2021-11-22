@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM(AudioClip audioClip)
     {
         audioSource.clip = audioClip;
+        audioSource.volume = 0.1f;
         audioSource.Play();
     }
 }

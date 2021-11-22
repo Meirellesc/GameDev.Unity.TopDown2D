@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{FEC473D5-DF57-5C7F-C884-55602EF1A8E4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Prefabs/FishPrefab.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Sounds/AudioManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Prefabs/WoodPrefab.cs" Line="9" Column="55" />
-      <File FileName="Assets/Scripts/Prefabs/FishPrefab.cs" Line="70" Column="44" />
-      <File FileName="Assets/Scripts/Player/Player.cs" Line="13" Column="14" />
-      <File FileName="Assets/Scripts/Player/PlayerAnim.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Farm/FishCollider.cs" Line="12" Column="51" />
+      <File FileName="Assets/Scripts/Player/PlayerAnim.cs" Line="18" Column="37" />
+      <File FileName="Assets/Scripts/Player/Player.cs" Line="188" Column="38" />
+      <File FileName="Assets/Scripts/Sounds/ActorSFX.cs" Line="11" Column="43" />
+      <File FileName="Assets/Scripts/Sounds/AudioControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Sounds/AudioManager.cs" Line="7" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,17 +13,9 @@
           <Node name="TopDownGame2D" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Enemy" expanded="True" />
-                <Node name="Environment" expanded="True">
-                  <Node name="Tree" expanded="True" />
+                <Node name="Sounds" expanded="True">
+                  <Node name="AudioControl.cs" selected="True" />
                 </Node>
-                <Node name="Farm" expanded="True" />
-                <Node name="HUD" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Prefabs" expanded="True">
-                  <Node name="FishPrefab.cs" selected="True" />
-                </Node>
-                <Node name="Sounds" expanded="True" />
               </Node>
               <Node name="Sounds" expanded="True" />
             </Node>
@@ -33,8 +25,29 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Unity.Burst.CodeGen.csproj</String>
+    <String>Unity.Burst.csproj</String>
+    <String>Unity.Burst.Editor.csproj</String>
+    <String>Unity.Collections.BurstCompatibilityGen.csproj</String>
+    <String>Unity.Collections.csproj</String>
+    <String>Unity.Multiplayer.MetricTypes.csproj</String>
+    <String>Unity.Multiplayer.NetStats.csproj</String>
+    <String>Unity.Multiplayer.NetStats.Tests.Editor.csproj</String>
+    <String>Unity.Multiplayer.NetStatsReporting.csproj</String>
+    <String>Unity.Multiplayer.NetworkProfiler.Editor.csproj</String>
+    <String>Unity.Multiplayer.NetworkProfiler.Runtime.csproj</String>
+    <String>Unity.Multiplayer.NetworkProfiler.Tests.Editor.csproj</String>
+    <String>Unity.Multiplayer.NetworkSolutionInterface.csproj</String>
+    <String>Unity.Multiplayer.NetworkSolutionInterface.Tests.Editor.csproj</String>
+    <String>Unity.Netcode.Components.csproj</String>
+    <String>Unity.Netcode.Editor.CodeGen.csproj</String>
+    <String>Unity.Netcode.Editor.csproj</String>
+    <String>Unity.Netcode.Runtime.csproj</String>
+    <String>Unity.Profiling.Core.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="304b9ba1-29f2-4eaf-91fb-e3e6b2ba109f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="70022fa7-9fec-4a1a-a381-dfa02bcf728f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

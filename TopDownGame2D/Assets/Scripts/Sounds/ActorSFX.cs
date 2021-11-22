@@ -8,6 +8,6 @@ public class ActorSFX : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip, 0.3f);
     }
 }
